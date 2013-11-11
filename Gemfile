@@ -26,6 +26,7 @@ gem 'jquery-rails'
 group :test do
 	gem 'capybara'
 end
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
@@ -37,9 +38,6 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :production do
-	gem 'pg'
-end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
