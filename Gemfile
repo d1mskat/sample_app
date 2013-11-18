@@ -3,11 +3,16 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
 gem 'bootstrap-sass'
-gem 'pg'
+gem 'protected_attributes'
+gem 'bcrypt-ruby'
 
 group :development, :test do
 	gem 'rspec-rails'
 	gem 'sqlite3'
+end
+
+group :development do
+	gem 'annotate'
 end
 
 group :assets do
@@ -41,6 +46,10 @@ end
 
 gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
 gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+
+group :production do
+	gem 'pg'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
