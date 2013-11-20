@@ -2,7 +2,18 @@
 
 /* universal */
 
-$grayLight: #999; 
+$grayLight: #999;
+
+@mixin box_sizing {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+} 
+@mixin border_radius {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
 
 html {
 	overflow-y: scroll;
@@ -126,4 +137,89 @@ footer {
   		margin-left: 10px;
   	}
   }
+}
+
+/* miscellaneous */
+
+.debug_dump {
+	clear: both;
+	float: left;
+	width: 100%;
+	margin-top: 45px;
+	@include box_sizing;
+}
+
+/* sidebar */
+
+aside {
+	section {
+		padding: 10px 0;
+		border-top: 1px solid $grayLight;
+		&:first-child {
+			border: 0;
+			padding-top: 0;
+		}
+		span {
+			display: block;
+			margin-bottom: 3px;
+			line-height: 1;
+		}
+		h1 {
+			font-size: 1.4em;
+			text-align: left;
+			letter-spacing: -1px;
+			margin-bottom: 3px;
+			margin-top: 0;
+		}
+	}
+}
+
+.gravatar {
+	float: left;
+	margin-right: 10px;
+}
+
+/* forms */
+
+.new-user-form {
+	width: 400px;
+	margin: 0 auto;
+	input[type=submit] {
+		width: 50%;
+	}
+}
+
+input, textarea, select, .uneditable-input {
+	border: 1px solid #bbb;
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 15px;
+	@include box_sizing;
+	@include border_radius;
+}
+
+input {
+	height: auto !important;
+}
+
+#error_explanation {
+	color: #f00;
+	.alert {
+		background: rgb(255,230,230);
+	}
+	ul {
+		list-style: none;
+		margin: 0 0 18px 0;	
+	}
+}
+
+.field_with_errors {
+	label {
+		color: red;
+	}
+	input[type=text], input[type=password] {
+		border: 1px solid red;
+	}
+	@extend .control-group;
+	@extend .error !optional;
 }

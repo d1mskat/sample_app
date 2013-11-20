@@ -31,6 +31,7 @@ gem 'jquery-rails'
 
 group :test do
 	gem 'capybara'
+	gem 'factory_girl_rails'
 end
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
