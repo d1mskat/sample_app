@@ -85,6 +85,10 @@ h2 {
 	color: $grayLight;
 }
 
+h2 strong {
+		color: rgb(100,50,50);
+}
+
 p {
 	font-size: 1.1em;
 	line-height: 1.7em;
@@ -181,7 +185,7 @@ aside {
 
 /* forms */
 
-.new-user-form {
+.new-user-form, .sign-in-form {
 	width: 400px;
 	margin: 0 auto;
 	input[type=submit] {

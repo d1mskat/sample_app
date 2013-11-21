@@ -1,5 +1,6 @@
 SampleApp::Application.routes.draw do
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
 # You can have the root of your site routed with "root"
   root to: 'static_pages#home'
@@ -7,7 +8,9 @@ SampleApp::Application.routes.draw do
   get '/help', to: 'static_pages#help'
   get '/about', to:  'static_pages#about'
   get '/contacts', to: 'static_pages#contacts'
-  get '/signup', to: 'users#new'
+  match '/signup', to: 'users#new', via: 'get'
+  match '/signin', to: 'sessions#new', via: 'get'
+  match '/signout', to: 'sessions#destroy', via: 'delete'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
